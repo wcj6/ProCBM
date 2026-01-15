@@ -1,7 +1,6 @@
 # ProCBM: Progressive Multi-modal Concept Bottleneck Model
 
-Official PyTorch implementation of  
-**ProCBM: Progressive Multi-modal Concept Bottleneck Model for Interpretable Medical Image Diagnosis**
+Official PyTorch implementation of **ProCBM: Progressive Multi-modal Concept Bottleneck Model for Interpretable Medical Image Diagnosis**
 
 📄 IEEE Transactions on Medical Imaging (under review)  
 🔗 Project Page / Paper: *to be updated*
@@ -10,8 +9,7 @@ Official PyTorch implementation of
 
 ## 🔍 Overview
 
-Concept Bottleneck Models (CBMs) provide interpretability by explicitly reasoning over human-understandable concepts.  
-However, existing CBMs rely on **static, unimodal language concepts**, which are often misaligned with complex medical visual patterns.
+Concept Bottleneck Models (CBMs) provide interpretability by explicitly reasoning over human-understandable concepts. However, existing CBMs rely on **static, unimodal language concepts**, which are often misaligned with complex medical visual patterns.
 
 **ProCBM** formulates concept prediction as a **progressive multi-modal querying process**:
 
