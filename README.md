@@ -5,6 +5,12 @@ Official PyTorch implementation of **ProCBM: Progressive Multi-modal Concept Bot
 📄 IEEE Transactions on Medical Imaging (under review)  
 🔗 Project Page / Paper: *to be updated*
 
+> ⚠️ **Code Release Notice**  
+> The codebase is currently being cleaned and organized for public release.  
+> We will release the full implementation, training scripts, and pretrained models as soon as possible.  
+> Please stay tuned.
+
+
 ---
 
 ## 🔍 Overview
