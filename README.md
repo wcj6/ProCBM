@@ -2,12 +2,9 @@
 
 Official PyTorch implementation of **ProCBM: Progressive Multi-modal Concept Bottleneck Model for Interpretable Medical Image Diagnosis**
 
-📄 IEEE Transactions on Medical Imaging (under review)  
-🔗 Project Page / Paper: *to be updated*
-
 > ⚠️ **Code Release Notice**  
 > The codebase is currently being cleaned and organized for public release.  
-> We will release the full implementation, training scripts, and pretrained models as soon as possible.  
+> We will release the complete implementation, training script, and pre trained model as soon as possible before January 25th, 2026.     
 > Please stay tuned.
 
 
