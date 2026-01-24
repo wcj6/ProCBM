@@ -51,6 +51,14 @@ pip install -r requirements.txt
 
 
 ```bash
+# isic2018
+# cm
+# busi
+# miniddsm
+# nct
+# siim
+# idrid
+
 python train_procbm.py \
   -d isic2018 \
   --data-path ./dataset/isic2018/ \
