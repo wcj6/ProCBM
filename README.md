@@ -33,7 +33,7 @@ This design preserves interpretability while significantly improving diagnostic 
 ---
 ##  Dataset
 
-Download the dataset from ISIC2018 website and process with scripts under `dataset_utils` or use the our processed files from [Google Drive](https://drive.google.com/drive/folders/1vf6X44zALelFXQNCAmg0_VizT4yxRkse?usp=drive_link)
+Download the dataset from [Google Drive](https://drive.google.com/drive/folders/1vf6X44zALelFXQNCAmg0_VizT4yxRkse?usp=drive_link)
 
 ---
 
