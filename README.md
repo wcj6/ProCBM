@@ -1,84 +1,66 @@
-# ProCBM: Progressive Multi-modal Concept Bottleneck Model
+# ProCBM  
+**Progressive Multi-modal Concept Bottleneck Model**
 
-Official PyTorch implementation of **ProCBM: Progressive Multi-modal Concept Bottleneck Model for Interpretable Medical Image Diagnosis**
-
-> ⚠️ **Code Release Notice**  
-> The codebase is currently being cleaned and organized for public release.  
-> We will release the complete implementation, training script, and pre trained model as soon as possible before January 25th, 2026.     
-> Please stay tuned.
-
+Official PyTorch implementation of  
+**ProCBM: Progressive Multi-modal Concept Bottleneck Model for Interpretable Medical Image Diagnosis**
 
 ---
+
 
 ## 🔍 Overview
 
-Concept Bottleneck Models (CBMs) provide interpretability by explicitly reasoning over human-understandable concepts. However, existing CBMs rely on **static, unimodal language concepts**, which are often misaligned with complex medical visual patterns.
+Concept Bottleneck Models (CBMs) improve interpretability by explicitly reasoning over human-understandable concepts. However, existing CBMs typically rely on **static, unimodal language concepts**, which are often misaligned with complex and diverse medical imaging patterns.
 
-**ProCBM** formulates concept prediction as a **progressive multi-modal querying process**:
+**ProCBM** introduces a **progressive multi-modal concept refinement framework**, where diagnostic concepts are:
 
-- Each diagnostic concept is initialized from language
-- Iteratively refined via interaction with visual features
-- Produces dynamic, context-aware multi-modal concept queries
-- Maintains explicit interpretability while improving diagnostic performance
+- Initialized from language models
+- Iteratively refined via interaction with hierarchical visual features
+- Dynamically updated through gated multi-modal fusion
+- Used as an explicit concept bottleneck for final prediction
 
----
-
-## ✨ Key Contributions
-
-- **Progressive Multi-modal Refinement (PMR)**  
-  Iteratively refines language-derived concepts into multi-modal concept queries.
-
-- **Cross-modal Distillation (CMD)**  
-  Extracts concept-specific visual evidence from multi-scale visual features.
-
-- **Gated Multi-modal Fusion (GMF)**  
-  Dynamically balances prior concept knowledge and visual evidence.
-
-- **Label-free Concept Learning**  
-  Concepts are generated via large language models (LLMs), without dense concept annotations.
-
-- **MLLM-based Faithfulness Evaluation**  
-  Uses an external multimodal LLM to assess whether activated concepts are sufficient to justify predictions.
+This design preserves interpretability while significantly improving diagnostic performance across multiple medical imaging modalities.
 
 ---
 
-## 🧠 Method Summary
+## ✨ Key Features
 
-Given an image \( x \) and a set of diagnostic concepts \( \{c_i\}_{i=1}^k \):
-
-1. Encode concepts using a frozen text encoder (e.g., BiomedCLIP)
-2. Extract hierarchical visual features from a vision backbone
-3. Iteratively apply **PMR blocks**:
-   - CMD: concept-guided visual evidence aggregation
-   - GMF: gated update of concept queries
-4. Project refined concept queries into a **concept bottleneck layer**
-5. Perform final classification based on concept activations
+- Progressive multi-modal concept refinement  
+- Concept-guided visual evidence aggregation  
+- Gated fusion of language priors and visual features  
+- Label-free concept learning from language models  
+- Explicit concept bottleneck for transparent decision making  
 
 ---
+##  Dataset
 
-## 📊 Benchmarks
-
-ProCBM is evaluated on **7 medical imaging datasets** covering diverse modalities:
-
-| Dataset | Modality | Task |
-|-------|--------|------|
-| ISIC2018 | Dermoscopy | Skin lesion classification |
-| IDRiD | Fundus | Diabetic retinopathy grading |
-| BUSI | Ultrasound | Breast tumor classification |
-| MiniDDSM | X-ray | Mammography |
-| SIIM | X-ray | Pneumothorax |
-| CM | X-ray | Cardiomegaly |
-| NCT-CRC-HE | Histopathology | Tissue classification |
-
-ProCBM consistently achieves **state-of-the-art accuracy and balanced accuracy**, outperforming prior CBMs and black-box models.
+Download the dataset from ISIC2018 website and process with scripts under `dataset_utils` or use the our processed files from [Google Drive](https://drive.google.com/drive/folders/1vf6X44zALelFXQNCAmg0_VizT4yxRkse?usp=drive_link)
 
 ---
 
 ## 🛠 Installation
 
-### Environment
-
 ```bash
 conda create -n procbm python=3.9 -y
 conda activate procbm
 pip install -r requirements.txt
+```
+
+---
+
+## ▶️ Running ProCBM (ISIC2018 Example) 
+
+
+```bash
+python train_procbm.py \
+  -d isic2018 \
+  --data-path ./dataset/isic2018/ \
+  --gpu 0 \
+  -e 150 \
+  -w 0.001
+```
+
+---
+
+## 📄 License
+
+For academic research use only.
